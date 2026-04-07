@@ -1,10 +1,10 @@
 # =============================================================================
-# Predictors of Missing Lactate Values in Cardiogenic Shock (CS) Patients
-# -----------------------------------------------------------------------------
+# Stepwise selection with backward elimination
+#
 # Purpose: Identify clinical predictors of missing lactate measurements using
-#           stepwise logistic regression with BIC-penalised selection (k = log n
-#           approximated as 6.6).  Model performance is evaluated on a held-out
-#           test set using the C-statistic (AUC).
+# stepwise logistic regression with BIC-penalised selection (k = log n
+# approximated as 6.6).  Model performance is evaluated on a held-out test set using the C-statistic (AUC).
+#
 # Data: CCCTN registry, waves 1–7
 # =============================================================================
 
