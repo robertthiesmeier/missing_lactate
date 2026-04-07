@@ -1,9 +1,9 @@
 # Addressing Informative Missingness of Lactate in Critical Care Registries: A Multiple Imputation Framework for Cardiogenic Shock Research
 
-This repository contains Stata and R code illustrating the workflow of adressing missing lactate values in the Critical Care Cardiology Trials Network (CCCTN). We provide the analysis scripts that were used for the manuscript (Thiesmeier et al.). The workflow follow this structure: 
+This repository contains Stata and R code illustrating the workflow of adressing missing lactate values in the Critical Care Cardiology Trials Network (CCCTN). We provide the analysis scripts that were used for the manuscript (Thiesmeier et al.). The workflow follow this structure including the analysis files: 
 
 1. [Identification of key predictors and internal validation: stepwise selection with backward elimination](analysis/_1_variable_selection.R)
-2. [Multiple Imputation of lactate values](analysis/_2_imputation_lactate.do)
+2. [Multiple Imputation of lactate values with predictive mean matching](analysis/_2_imputation_lactate.do)
 3. IABP-SHOCK II risk score application: Imputation of missing lactate values and reclassification of the risk score
 
    Discriminitive performance check with
