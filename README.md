@@ -2,17 +2,17 @@
 
 This repository contains Stata and R code illustrating the workflow of adressing missing lactate values in the Critical Care Cardiology Trials Network (CCCTN). We provide the analysis scripts that were used for the manuscript (Thiesmeier et al.). The workflow follow this structure: 
 
-1. Identification of key predictors and internal validation: stepwise selection with backward elimination ( :open_file_folder:  _1_variable_selection.R)  
-2. Multiple Imputation of lactate values (:open_file_folder: _2_imputation_lactate.do)
+1. [Identification of key predictors and internal validation: stepwise selection with backward elimination](analysis/_1_variable_selection.R)
+2. [Multiple Imputation of lactate values](analysis/_2_imputation_lactate.do)
 3. IABP-SHOCK II risk score application: Imputation of missing lactate values and reclassification of the risk score
 
    Discriminitive performance check with
 
-   a) AUC (:open_file_folder: _3_a_AUC_IABP_SHOCK_II_risk_score_application.do)
+   a) [AUC](analysis/_3_a_AUC_IABP_SHOCK_II_risk_score_application.do)
 
-   b) the Net Re-classification Index (NRI) (:open_file_folder: _3_b_NRI_IABP_SHOCK_II_risk_score_application.do)
-4. Validation using analysis after MI (:open_file_folder: _4_IABP_SHOCK_II_risk_score_application_ANALYSIS.do)
+   b) [the Net Re-classification Index (NRI)](analysis/_3_b_NRI_IABP_SHOCK_II_risk_score_application.do)
+5. [Validation using analysis after MI](analysis/_4_IABP_SHOCK_II_risk_score_application_ANALYSIS.do)
 
-Code for different imputation techniques (linear regression with log-transformed values & quantile regression) is provided in an additional file (:open_file_folder: different_imputations_techniques.do). Additional material for the descriptive analysis is also provided (:open_file_folder: descriptives.do).
+Code for different imputation techniques (linear regression with log-transformed values & quantile regression) is provided in an additional [file](analysis/different_imputations_techniques.do). Additional material for the [descriptive analysis](analysis/descriptives.do) is also provided.
 
 Note that the orginal individual-level data cannot be shared.
