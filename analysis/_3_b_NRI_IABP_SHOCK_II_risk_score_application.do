@@ -80,8 +80,6 @@ syntax [, imp(real 1) stype(real 1)] // for the loop over number of imputations 
 	restore
 end
 
-*** ----------------------------------------------------------------------- ***
-
 ************************************************************
 *** Begin: NRI caclulation ***
 ************************************************************
@@ -119,7 +117,7 @@ forv k = 1/3{
 	gen b_nri_pos_cs`k'_p = .
 }
  
-local reps = 5 // reps for bootstrap
+local reps = 5 // reps for bootstrap (increase for final analysis)
 forv k = 1/`imp'{
 	
 	// CS1 event
@@ -209,8 +207,6 @@ graph combine ///
 	row(2) name(combined_nri, replace) /// 
 	title("{bf:Total NRI}", size(large) pos(12)) /// 
 	note("{bf:NRI+ cases}", size(large) pos(0))
-
-graph export "Z:\Robert\CCCTN\results\NRI_fig.jpg", as(jpg) width(4000) replace
 
 *** table for p-values in all three CS categories ***
 // average p-value for NRI value and NRI+ value (results from the bootstrap)
