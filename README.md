@@ -2,7 +2,7 @@
 
 This repository contains Stata and R code illustrating the workflow of adressing missing lactate values in the Critical Care Cardiology Trials Network (CCCTN). We provide the analysis scripts that were used for the manuscript (Thiesmeier et al.). The workflow follow this structure: 
 
-1. Identification of key predictors and internal validation: stepwise selection with backward elimination (:open_file_folder: _1_variable_selection.R)  
+1. Identification of key predictors and internal validation: stepwise selection with backward elimination (:open_file_folder:  _1_variable_selection.R)  
 2. Multiple Imputation of lactate values (:open_file_folder: _2_imputation_lactate.do)
 3. IABP-SHOCK II risk score application: Imputation of missing lactate values and reclassification of the risk score
 
