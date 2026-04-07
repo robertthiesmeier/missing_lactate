@@ -4,7 +4,7 @@
 
 *** Predictive Mean Matching (PMM) is used in the manuscript ***
 
-// generate the outcome: mortality (in-hospital) (cicu_dispo==3)
+// generate the outcome: mortality (in-hospital) 
 gen mort = . 
 replace mort = 0 if (cicu_dispo!=3)
 replace mort = 1 if (cicu_dispo==3)
@@ -28,6 +28,7 @@ mi set wide
 mi register imputed lactate_baseline
 mi register passive IABP_score iab_lact_with_missing
 
+*** use PMM to create multiple imputed datasets
 mi impute pmm lactate_baseline ///
 	sex past_medical_cv___3 past_medical_cv___6 ///
 	past_medical___1 hf new_acs mech_support i.sofa_max24 ///
