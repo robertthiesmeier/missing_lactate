@@ -5,7 +5,10 @@ This repository contains Stata and R code illustrating the workflow of adressing
 1. Identification of key predictors and internal validation: stepwise selection with backward elimination
 2. Multiple Imputation of lactate values
 3. IABP-SHOCK II risk score application: Imputation of missing lactate values and reclassification of the risk score
+
    Discriminitive performance check with
+
    a) C-statistic
+
    b) the net classification index (NRI) 
-4. Validation using analysis after MI
+5. Validation using analysis after MI
