@@ -33,6 +33,7 @@ program define imp_roc, rclass
 	drop iab_lact_`imp' IABP_score_imp_`imp' score_3cat_imp_`imp' p_mort_cs1_`imp'
 end 
 
+*** use the program to loop over the three CS categories
 forvalues k = 1/3 {
     cap drop roc_imp_final_`k'
     qui gen roc_imp_final_`k' = . 
@@ -43,6 +44,8 @@ forvalues k = 1/3 {
         qui replace roc_imp_final_`k' = r(roc_cs`k'_imp) if _n == `i'
     }
 }
+
+*** create three figures with the distribution of the AUC for each CS type
 
 local roc_amics = round(roc_cs1, 0.001) 
 local roc_nonamics = round(roc_cs2, 0.001)
@@ -80,5 +83,3 @@ hist roc_imp_final_3,  ///
 		note("C-statistic without imputed lactate: `=`roc_mixed'' ", size(small))
 		
 graph combine fig1 fig2 fig3, ycommon col(3)
-graph export "Z:\Robert\CCCTN\results\fig_roc.jpg", as(jpg) width(4000) replace 
-
