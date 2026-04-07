@@ -41,5 +41,3 @@ two (hist lactate_baseline if cs == 0 & lactate_baseline < 10, fcolor(%0) lcolor
 	(hist lactate_baseline if cs == 1 & lactate_baseline < 10, fcolor(black%30) lcolor(%0) bin(50)), legend(label(1 "no CS") label(2 "CS") row(1) pos(6)) name(fig1, replace) xlabel(0.0 `=`median_nocs'' `=`median_cs'' 4.0 5.0 6.0 7.0 8.0 9.0 10, nogrid) ylab(, nogrid) xtitle("Lactate at baseline (mmol/L)") ytitle("Distribution") ///
 	xline(`=`median_nocs'', lwidth(medthick) lpattern(dash) lcolor(black)) ///
 	xline(`=`median_cs'', lpattern(solid) lcolor(black) lwidth(medthick)) 
-	
-graph export "Z:\Robert\CCCTN\output\abstract_manuscript\fig1_distribution_lactate.png", replace width(4000)
