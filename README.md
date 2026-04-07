@@ -6,8 +6,8 @@ We also provide a generic code script that can be adapted for specific project n
 
 The outline for the workflor presented in the manuscript is as follows: 
 1. Pre-select clinically relevant predictors of missing biomarker
-2. Select predictors based on variable selection procedure
-3. Generate M number of imputations for missing biomarker conditional on selected predictors
-4. Validation with the Net-reclassification Index
-5. Validation using AUC
-6. Validation using analysis after MI
+2. Identification of key predictors and internal validation: stepwise selection with backward elimination
+3. Multiple Imputation of lactate values
+4. IABP-SHOCK II risk score application: Imputation of missing lactate values and reclassification of the risk score
+   a. Discriminitive performance check: C-statistics & the net classification index (NRI) 
+5. Validation using analysis after MI
