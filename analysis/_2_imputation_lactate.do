@@ -2,6 +2,8 @@
 *** Multiple imputation of missing lactate values ***
 ****************************************************************************************
 
+*** Predictive Mean Matching (PMM) is used in the manuscript ***
+
 // generate the outcome: mortality (in-hospital) (cicu_dispo==3)
 gen mort = . 
 replace mort = 0 if (cicu_dispo!=3)
@@ -31,3 +33,5 @@ mi impute pmm lactate_baseline ///
 	past_medical___1 hf new_acs mech_support i.sofa_max24 ///
 	carrest i.shock_type mort ///
 	if inlist(shock_type, 1, 2, 3), knn(10) add(`imp') rseed(18325)
+
+****************************************************************************************
