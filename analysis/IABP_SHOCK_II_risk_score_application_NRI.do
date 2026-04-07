@@ -2,8 +2,6 @@
 Purpose: 
 1. Multiple imputation for missing lactate values using PMM
 2. NRI applied to the IABP score to validate
-3. AUC after MI applied to the IABP score to validate
-4. Analysis after MI using the IABP score
 
 Data: CCCTN, wave 1-4 (as in orginal IABP score analysis)
 ==============================================================================*/
