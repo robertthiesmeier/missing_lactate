@@ -1,7 +1,7 @@
 *** Start after MI of lactate ***
 
 *******************************************************************************
-*** Results for all imputations ***
+*** AUC after MI of lactate for all imputations ***
 *******************************************************************************
 
 // Loop over ALL imputations and summarise the results
