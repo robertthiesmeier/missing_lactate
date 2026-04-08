@@ -1,18 +1,18 @@
 # Addressing Informative Missingness of Lactate in Critical Care Registries: A Multiple Imputation Framework for Cardiogenic Shock Research
 
-This repository contains Stata and R code illustrating the workflow of adressing missing lactate values in the Critical Care Cardiology Trials Network (CCCTN). We provide the analysis scripts that were used for the manuscript (Thiesmeier et al.). The code can be used to be adapted for other data. The programs written for the AUC and NRI are not specific to the data. The workflow follow this structure including the analysis files: 
+This repository contains Stata and R code illustrating a workflow for adressing missing lactate values in the Critical Care Cardiology Trials Network (CCCTN). We provide the analysis Stata scripts that were used for the manuscript (Thiesmeier et al. under review), as well as a R simplified template of the key analytica steps. The code can be adapted to users data. 
 
-1. [Identification of key predictors and internal validation: stepwise selection with backward elimination](analysis/_1_variable_selection.R)
+The workflow follow this structure : 
+
+1. [Identification of key predictors and internal validation](analysis/_1_variable_selection.R)
 2. [Multiple Imputation of lactate values with predictive mean matching](analysis/_2_imputation_lactate.do)
-3. IABP-SHOCK II risk score application: Imputation of missing lactate values and reclassification of the risk score
+3. Assessment of the imputation effect on study-specific settings. In our example, this was conducted assessing the reclassification of IABP-SHOCK II risk score when lactate is imputed through our workflow vs naive imputations (all missing data imputed to 0).
 
-   Discriminitive performance check with
-
+   Study-specific files: 
    a) [AUC](analysis/_3_a_AUC_IABP_SHOCK_II_risk_score_application.do).
-
-   b) [the Net Re-classification Index (NRI)](analysis/_3_b_NRI_IABP_SHOCK_II_risk_score_application.do)
-5. [Validation using analysis after MI](analysis/_4_IABP_SHOCK_II_risk_score_application_ANALYSIS.do)
+   b) [Net Re-classification Index (NRI)](analysis/_3_b_NRI_IABP_SHOCK_II_risk_score_application.do)
+   c) [Validation using analysis after MI](analysis/_4_IABP_SHOCK_II_risk_score_application_ANALYSIS.do)
 
 Code for different imputation techniques (linear regression with log-transformed values & quantile regression) is provided in an additional [file](analysis/different_imputations_techniques.do). Additional material for the [descriptive analysis](analysis/descriptives.do) is also provided.
 
-Note that the orginal individual-level data cannot be shared.
+[R code to replicate the workflow](analysis/R_imputation_template)
