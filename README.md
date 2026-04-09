@@ -6,9 +6,8 @@ This repository contains Stata and R code illustrating a workflow for adressing 
 
 1. [Identification of key predictors and internal validation](analysis/_1_variable_selection.do)
 2. [Multiple Imputation of lactate values with predictive mean matching](analysis/_2_imputation_lactate.do)
-3. Assessment of the imputation effect on study-specific settings. In our example, this was conducted assessing the reclassification of IABP-SHOCK II risk score when lactate is imputed through our workflow vs naive imputations (all missing data imputed to 0).
-
-   Study-specific files: 
+3. Assessment of the imputation effect on study-specific settings. In our example, this was conducted assessing the reclassification of IABP-SHOCK II risk score when lactate is imputed through our workflow vs naive imputations (all missing data imputed to 0). Study-specific files:
+   
    a) [AUC](analysis/_3_a_AUC_IABP_SHOCK_II_risk_score_application.do)
    
    b) [Net Re-classification Index (NRI)](analysis/_3_b_NRI_IABP_SHOCK_II_risk_score_application.do)
