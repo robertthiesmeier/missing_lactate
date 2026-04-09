@@ -1,10 +1,7 @@
 /*****************************
 Variable selection procedure for mising lactate framework
+Stepwise backward logistic regression + AUC on test set
 ******************************/ 
-
-* =============================================================================
-* Stepwise backward logistic regression + AUC on test set
-* =============================================================================
 
 *** Load dataset here (CCCTN (wave 1-7) dataset was used in the manuscript)
 use "your_data.dta", clear
