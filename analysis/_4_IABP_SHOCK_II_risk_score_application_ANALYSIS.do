@@ -12,7 +12,7 @@ mi estimate, or
 // analysis model without the imputed values treating missing lactate = 0
 logit mort IABP_score if inlist(shock_type, 1, 2, 3), or 
 
-// adjusted for sofa score and scai 
+// adjusted for sofa score and scai (! note that scai_shock must be included in the imputation model for this step !)
 mi estimate, post imp(1/50): logit mort IABP_score sofa_max24  scai_shock if inlist(shock_type, 1, 2, 3)
 mi estimate, or
 
