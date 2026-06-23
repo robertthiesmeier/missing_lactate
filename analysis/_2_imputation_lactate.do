@@ -10,9 +10,6 @@ replace mort = 0 if (cicu_dispo!=3)
 replace mort = 1 if (cicu_dispo==3)
 tab mort
 
-// check missigness of predictors
-mdesc lactate_baseline sex past_medical_cv___3 past_medical_cv___6 past_medical___1 hf new_acs mech_support sofa_max24 carrest  if inlist(shock_type, 1, 2, 3)
-
 *** Multiple imputation ***
 local imp = 100 // change the number of imputations here
 
@@ -29,10 +26,30 @@ mi register imputed lactate_baseline
 mi register passive IABP_score iab_lact_with_missing
 
 *** use PMM to create multiple imputed datasets
-mi impute pmm lactate_baseline ///
-	sex past_medical_cv___3 past_medical_cv___6 ///
-	past_medical___1 hf new_acs mech_support i.sofa_max24 ///
-	carrest i.shock_type mort ///
-	if inlist(shock_type, 1, 2, 3), knn(10) add(`imp') rseed(18325)
+mi impute pmm lactate_baseline /// 
+		age /// 
+		sex /// 
+		smoking_status /// 
+		past_medical_cv___1 /// 
+		past_medical_cv___2 /// 
+		past_medical_cv___3 /// 
+		past_medical_cv___4 /// 
+		past_medical_cv___6 /// 
+		past_medical___1 /// 
+		past_medical___2 /// 
+		past_medical___3 /// 
+		hf /// 
+		new_acs /// 
+		mech_support /// 
+		carrest /// 
+		sofa_max24 /// 
+		eGFR_bl /// 
+		i.shock_type /// 
+		glu_baseline /// 
+		creat_baseline /// 
+		ia_pci ///
+		mort ///
+		if inlist(shock_type, 1, 2, 3), add(`imp') rseed(18325) knn(10)
 
 ****************************************************************************************
+
