@@ -21,15 +21,6 @@ dat$mort <- ifelse(dat$cicu_dispo == 3, 1, 0)
 # Keep only shock types used in the manuscript
 dat_mi <- subset(dat, shock_type %in% c(1, 2, 3))
 
-# Quick check of missingness in variables used for imputation
-vars_to_check <- c(
-  "lactate_baseline", "sex", "past_medical_cv___3", "past_medical_cv___6",
-  "past_medical___1", "hf", "new_acs", "mech_support",
-  "sofa_max24", "carrest", "shock_type", "mort"
-)
-
-colSums(is.na(dat_mi[vars_to_check]))
-
 # Score component based on observed lactate
 dat_mi$iab_lact_with_missing <- ifelse(
   is.na(dat_mi$lactate_baseline), NA,
@@ -45,11 +36,12 @@ set.seed(18325)
 
 # Keep only variables needed for the imputation model
 imp_data <- dat_mi[, c(
-  "lactate_baseline", "sex", "past_medical_cv___3", "past_medical_cv___6",
-  "past_medical___1", "hf", "new_acs", "mech_support",
-  "sofa_max24", "carrest", "shock_type", "mort",
-  "iam_age", "iam_cve", "iam_glu", "iam_creat", "ia_pci",
-  "score_3cat", "scai_shock"
+  "age", "sex", "smoking_status", "past_medical_cv___1",
+  "past_medical_cv___2", "past_medical_cv___3", "past_medical_cv___4", "past_medical_cv___6",
+  "past_medical___1", "past_medical___2", "past_medical___3", "hf",
+  "new_acs", "mech_support", "carrest", "sofa_max24",
+  "eGFR_bl", "shock_type", "glu_baseline", "creat_baseline",
+  "ia_pci", "mort"
 )]
 
 # Impute only lactate_baseline
